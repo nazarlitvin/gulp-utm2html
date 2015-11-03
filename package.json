@@ -1,0 +1,21 @@
+{
+  "name": "gulp-utm2html",
+  "version": "0.0.1",
+  "description": "Add UTM tags to URL in HTML file",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nazarlitvin/gulp-utm2html"
+  },
+  "keywords": [
+    "utm"
+  ],
+  "author": "Nazar Litvin <n.litvin41@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vinyl": "~1.1.0",
+    "through2": "~2.0.0",
+    "cheerio": "~0.19.0",
+    "gulp-util": "~3.0.7"
+  }
+}
