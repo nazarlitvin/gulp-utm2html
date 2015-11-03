@@ -23,7 +23,7 @@ gulp.task('default', function() {
             content: 'content'}))
         .pipe(gulp.dest('./dest')) });
 ```
-Source, medium amd campaign are essential parameters. Term and content are optional.
+Source, medium and campaign are essential parameters. Term and content are optional.
 
 URL with mailto protocol will be ignored. If your URL already have UTM tags they will be replaced. To save exist UTM tags, or leave URL without UTM tags - use data-utm="nope" attribute like this:
 
@@ -32,6 +32,7 @@ URL with mailto protocol will be ignored. If your URL already have UTM tags they
 ```
 
 ##Example
+
 ```shell
 <a href="https://github.com/nazarlitvin">
 	UTM tags will be added</a>
