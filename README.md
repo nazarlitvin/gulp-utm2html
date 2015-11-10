@@ -10,8 +10,8 @@ npm install --save-dev gulp-utm2html
 Then, add it to your gulpfile.js:
 
 ```shell
-var gulp          = require('gulp'),
-	utm2html  = require('gulp-utm2html');
+var gulp      = require('gulp'),
+    utm2html  = require('gulp-utm2html');
 
 gulp.task('default', function() {
     return gulp.src(['./*.html'])
