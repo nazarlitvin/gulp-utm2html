@@ -13,9 +13,8 @@
   "author": "Nazar Litvin <n.litvin41@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vinyl": "~1.1.0",
-    "through2": "~2.0.0",
-    "cheerio": "~0.19.0",
-    "gulp-util": "~3.0.7"
+    "cheerio": "~1.0.0-rc.1",
+    "gulp-util": "~3.0.8",
+    "through2": "~2.0.3"
   }
 }
