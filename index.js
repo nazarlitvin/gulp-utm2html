@@ -52,16 +52,19 @@ function utm2html(opts) {
             var $ = cheerio.load(file.contents); // load in the HTML into cheerio
             var links = $('a');
 
-            for (var i = 0, len = links.length; i < len; i++) {
+            var preventChangesWords = ['nope', 'ignore', 'false'];
 
-                if ($(links[i]).attr('data-utm') === 'nope') {
-                    $(links[i]).removeAttr("data-utm")
+            for (var i = 0, len = links.length; i < len; i++) {
+              var link = $(links[i]);
+
+                if (preventChangesWords.indexOf(link.attr('data-utm')) !== -1) {
+                    link.removeAttr('data-utm')
                     continue;
                 }
 
-                var parsedLink = url.parse($(links[i]).attr('href'), true);
+                var parsedLink = url.parse(link.attr('href'), true);
 
-                // ignore URL with malto protocol
+                // ignore URL with mailto protocol
                 if (parsedLink.protocol === 'mailto:') {
                     continue;
                 }
@@ -77,7 +80,7 @@ function utm2html(opts) {
                 }
 
                 delete parsedLink.search;
-                $(links[i]).attr('href', url.format(parsedLink))
+                link.attr('href', url.format(parsedLink))
             }
 
             var data = $.html();
