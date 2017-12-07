@@ -1,4 +1,4 @@
-Gulp-utm2html is a tool that will help add UTM tags to URL in HTML file. I use this plugin to make URL with UTM tags in my HTML emails. 
+Gulp-utm2html is a tool that will help add UTM tags to URL in HTML file. I use this plugin to make URL with UTM tags in my HTML emails.
 
 ##Usage
 
@@ -44,6 +44,8 @@ URL with mailto protocol will be ignored. If your URL already have UTM tags they
 	UTM tags will be saved.</a>
 <a href="mailto:n.litvin41@gmail.com">
 	URL with mailto protocol will be ignored.</a>
+<a href="tel:07700900000">
+	URL with tel protocol will be ignored.</a>
 ```
 
 This code will compiled to this:
@@ -59,6 +61,8 @@ This code will compiled to this:
 	UTM tags will be saved.</a>
 <a href="mailto:n.litvin41@gmail.com">
 	URL with mailto protocol will be ignored.</a>
+<a href="tel:07700900000">
+	URL with tel protocol will be ignored.</a>
 ```
 
 MIT License

@@ -49,7 +49,7 @@ function utm2html(opts) {
 
         if (file.isBuffer()) {
 
-            var $ = cheerio.load(file.contents); // load in the HTML into cheerio
+            var $ = cheerio.load(file.contents, {decodeEntities: false}); // load in the HTML into cheerio
             var links = $('a');
 
             var preventChangesWords = ['nope', 'ignore', 'false'];
@@ -68,6 +68,10 @@ function utm2html(opts) {
                 if (parsedLink.protocol === 'mailto:') {
                     continue;
                 }
+                // ignore URL with tel protocol
+                else if (parsedLink.protocol === 'tel:') {
+                    continue;
+                }
 
                 parsedLink.query.utm_source      = opts.source;
                 parsedLink.query.utm_medium      = opts.medium;
@@ -84,7 +88,7 @@ function utm2html(opts) {
             }
 
             var data = $.html();
-            var buffer = new Buffer(data.length);
+            var buffer = new Buffer(data);
             buffer.write(data);
             file.contents = buffer;
 
