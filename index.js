@@ -49,7 +49,7 @@ function utm2html(opts) {
 
         if (file.isBuffer()) {
 
-          var $ = cheerio.load(file.contents, {decodeEntities: false}); // load in the HTML into cheerio
+            var $ = cheerio.load(file.contents, {decodeEntities: false}); // load in the HTML into cheerio
             var links = $('a');
 
             var preventChangesWords = ['nope', 'ignore', 'false'];
