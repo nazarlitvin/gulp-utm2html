@@ -68,6 +68,10 @@ function utm2html(opts) {
                 if (parsedLink.protocol === 'mailto:') {
                     continue;
                 }
+                // ignore URL with tel protocol
+                else if (parsedLink.protocol === 'tel:') {
+                    continue;
+                }
 
                 parsedLink.query.utm_source      = opts.source;
                 parsedLink.query.utm_medium      = opts.medium;
